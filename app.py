@@ -7,16 +7,18 @@ users = {
 }
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
         
         if username in users and users[username] == password:
-            return f'Добро пожаловать, {username}!'
+            return redirect(url_for('love_general'))
         else:
             flash('Неверный логин или пароль!', 'error')
             return redirect(url_for('login'))
-    return render_template('login.html')
+    return render_template('login.html',background_image='/static/images/image.jpg')
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -37,7 +39,9 @@ def register():
             users[username] = password
             flash('Регистрация успешна! Теперь вы можете войти.', 'success')
             return redirect(url_for('login'))
-    return render_template('register.html')
-
+    return render_template('register.html', page_class='register-page')
+@app.route('/love_general')
+def about():
+    return render_template('love_general.html')
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
