@@ -6,28 +6,188 @@
     <title>Вход</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
     <style>
+        /*сам сайт*/
         body {
-            background-image: url('{{ background_image }}');
+            background-image: url("{{ url_for('static', filename='images/login.jpg') }}");
             background-size: cover;
             background-position: center;
             height: 100vh;
             margin: 0;
+}
+        /*уведомление*/
+        .popup { 
+            position: fixed; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            width: 300px; 
+            padding: 20px; 
+
+            box-shadow: 0 0 10px rgba(116, 68, 117, 0.5); 
+            border-radius: 8px; 
+            text-align: center; 
+            backdrop-filter: blur(10px);
+            display: none; 
+            z-index: 1000;
         }
+
+        .popup-header {
+            text-align: right;
+        }
+
+        .close-btn {
+            background: transparent; 
+            border: none; 
+            font-size: 16px; 
+            cursor: pointer; 
+        }
+
+        .popup-footer {
+            margin-top: 20px;
+        }
+
+        .overlay { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(0, 0, 0, 0.5); 
+            display: none; 
+            z-index: 999; 
+        }
+
+        .btn { 
+            padding: 10px 20px; 
+            background: #007bff; 
+            color: #fff; 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer; 
+        }
+
+        .btn:hover { background: #0056b3; }
+        /*Всплывающее видео справа снизу*/
+        .video-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .video-container video {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            object-fit: cover;
+        }
+        
+        .video-container:hover video {
+            transform: translateY(-100px);
+        }
+        /*текст в всплывающем видео*/
+        .text {
+            margin-top: -90px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .video-container:hover .text {
+            opacity: 1;
+            transition-delay: 0.3s;
+        }
+        
+        .hover-container {
+            position: relative;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .hover-container h1 {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        /*Всплывающая надпись на Вход*/
+        .tooltip {
+            position: absolute;
+            bottom: 100%; /* Расположение под текстом */
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0; /* Изначально скрыто */
+            background: rgba(0, 0, 0, 0.2); /* Полупрозрачный фон */
+            color: white;
+            padding: 20px 25px;
+            border-radius: 5px;
+            font-size: 15px;
+            transition: opacity 0.5s ease;
+            pointer-events: none; /* Исключить из событий мыши */
+            white-space: nowrap;
+            backdrop-filter: blur(10px);
+        }
+        
+        .hover-container:hover .tooltip {
+            opacity: 1; /* Появление при наведении */
+        }
+
     </style>
 </head>
 <body>
     <div class="login-container">
-        <h1>Вход</h1>
+        <div class="hover-container">
+            <h1>Вход</h1>
+            <div class="tooltip">Строго по спискам!!!</div>
+        </div>
         <form action="/login" method="post">
-            <label for="username">Логин:</label>
+            <label for="username">Меня зовут:</label>
             <input type="text" id="username" name="username" required>
             
-            <label for="password">Пароль:</label>
+            <label for="password"></label>
+            <label for="password">Я хочу сказать:</label>
             <input type="password" id="password" name="password" required>
             
             <button type="submit">Войти</button><br><br>
         </form>
-        <a href="{{ url_for('register') }}" class="button">Нет аккаунта? Зарагистрироваться</a>
+        <button class="btn" onclick="openPopup()">Не понимаешь? <br> Показать подсказку?</button>
     </div>
+    <div class="overlay" id="overlay"></div>
+
+    <div class="popup" id="popup">
+        <p>Пример 1:<br>Мы не виделись несколько дней и наконец встретились где-то.
+            Мы долго обнимаемся и я тебе говорю: "keywords" безумно сильно ❤️ <br>
+            Пример 2:<br> Мы гуляем по вечерниму Питеру и мы выходим на Невский.
+            Я останавливаю тебя чтоб обнять и говорю: "keywords" очень очень сильно ❤️
+            <br><br>
+            ключ входа ("keywords") надо писать маленькими буквами с пробелами.<br>Это 3 важных слова)
+        </p>
+        <div class="popup-footer">
+            <button class="btn" onclick="closePopup()">Понятно</button>
+        </div>
+    </div>
+    
+    <div class="video-container">
+        <video autoplay loop muted playsinline>
+            <source src="{{ url_for('static', filename='images/video.mp4') }}" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+        <div class="text">Я люблю тебя ❤️<br>А ты меня?)</div>
+    </div>
+
+
+    <script>
+        function openPopup() {
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+    
 </body>
 </html>

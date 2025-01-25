@@ -1,9 +1,17 @@
 from flask import Flask, request, render_template, flash, redirect, url_for
+from flask import Flask, render_template, request
+import json
+import pandas as pd
+import matplotlib.pyplot as plt
+from datetime import datetime
+import numpy as np
+import io
+import base64
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
 users = {
-    'Админ': 'Я люблю тебя'
+    'Вероника': 'я люблю тебя'
 }
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -20,28 +28,9 @@ def login():
     return render_template('login.html',background_image='/static/images/image.jpg')
 
 
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        confirm_password = request.form['confirm_password']
-        
-        # Проверка данных
-        if username in users:
-            flash('Пользователь с таким логином уже существует!', 'error')
-        elif password != confirm_password:
-            flash('Пароли не совпадают!', 'error')
-        elif len(password) < 6:
-            flash('Пароль должен быть не менее 6 символов!', 'error')
-        else:
-            # Добавление нового пользователя
-            users[username] = password
-            flash('Регистрация успешна! Теперь вы можете войти.', 'success')
-            return redirect(url_for('login'))
-    return render_template('register.html', page_class='register-page')
 @app.route('/love_general')
 def about():
     return render_template('love_general.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
