@@ -21,16 +21,20 @@ def login():
         password = request.form['password']
         
         if username in users and users[username] == password:
-            return redirect(url_for('love_general'))
+            return redirect(url_for('love_general_1'))
         else:
             flash('Неверный логин или пароль!', 'error')
             return redirect(url_for('login'))
     return render_template('login.html',background_image='/static/images/image.jpg')
 
 
-@app.route('/love_general')
-def about():
-    return render_template('love_general.html')
+@app.route('/love_general_1')
+def love_general_1():
+    return render_template('love_general_1.html')
+
+@app.route('/love_general_2')
+def love_general_2():
+    return render_template('love_general_2.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

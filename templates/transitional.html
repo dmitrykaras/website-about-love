@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="outlined-text">Предупрежение!!!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icon.png') }}">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='images/bg.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        
+
+
+        /*кнопка продолжить >>>*/
+        .button {
+            position: absolute;
+            bottom: 70px;
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 8px;
+            transition: 0.5s ease;
+            transform: scale(1.2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
+        }
+        
+        .button:hover {
+            background-color: #0056b3;
+            transform: scale(1.3);
+        }
+
+    </style>
+</head>
+<body>
+    <div calss="text-center">
+        Я делал этот сайт полность самостоятельно и я <br>
+        очень надеюсь что тебе понравится. Надеюсь <br>
+        ты не испугалась моих художеств, ведь это и есть мой ... <br>
+    </div>
+</body>
