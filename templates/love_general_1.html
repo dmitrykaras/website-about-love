@@ -85,7 +85,6 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
             white-space: nowrap;
         }
-
         /*текст справа снизу*/
         .text-bottom {
             position: absolute;
@@ -97,6 +96,13 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
             white-space: nowrap;
         }
+
+        /* Стили для ссылки */
+        .text-bottom a {
+            color: inherit; /* Наследует цвет текста от родителя */
+            text-decoration: none; /* Убирает подчеркивание */
+        }
+
 
         /*кнопка продолжить >>>*/
         .button {
@@ -193,13 +199,15 @@
             font-size: 20px;
         }
 
+        
     </style>
 </head>
 <body>
     <div class="header-text">
         08:35 или 10:25 — и снова кто-то из нас<br> ждёт другого у метро)
     </div>
-    <div class="text-bottom"> Сенная площадь
+    <div class="text-bottom">
+        <a href="https://yandex.ru/maps/-/CHqEM66x" target="_blank">Сенная площадь</a>
     </div>
 
     <div class="or-container">

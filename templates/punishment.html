@@ -17,7 +17,8 @@
 
         /* Общие стили для центрирования текста */
         .text-center {
-            text-align: center;
+            position: absolute; 
+            top: 120px;
             font-family: Arial, sans-serif;
             font-size: 34px;
             color: #ffffff;
@@ -60,61 +61,14 @@
             transform: scale(1.3);
         }
 
-        .unclickable-button {
-            position: absolute;
-            padding: 10px 20px;
-            font-size: 18px;
-            cursor: pointer;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            width: 150px;
-            height: 50px; 
-            transition: top 0.7s ease, left 0.7s ease; 
-            left: -160px;
-        }
 
     </style>
 </head>
 <body>
     <div class="text-center fade-in">
-        <p>Я делал этот сайт полность самостоятельно (chat-gpt не в счёт)<br>
-            и я очень надеюсь что тебе понравится. Надеюсь <br>
-            ты не испугалась моих художеств, ведь это и есть мой ... <br>
+        <p>ну всё... пизда тебе... ВРЕМЯ ОТРЕЗАТЬ ПИПИСЬКИ 
         </p>
     </div>
-    <a href="/love_general_1" class="button">ЧИТАИТЬ ДАЛЕЕ...</a>
+    <a href="/login" class="button">Вернутся обратно(</a>
 
-    <button class="unclickable-button" id="movingButton">отказаться...</button>
-
-    <script>
-        const button = document.getElementById('movingButton');
-
-        button.addEventListener('mouseover', function() {
-        const windowWidth = window.innerWidth;
-        const windowHeight = window.innerHeight;
-        const buttonWidth = button.offsetWidth;
-        const buttonHeight = button.offsetHeight;
-
-        // Ограничение перемещения, чтобы кнопка не выходила за пределы экрана
-        const maxLeft = windowWidth - buttonWidth;
-        const maxTop = windowHeight - buttonHeight;
-
-        const randomLeft = Math.floor(Math.random() * maxLeft);
-        const randomTop = Math.floor(Math.random() * maxTop);
-
-        button.style.left = `${randomLeft}px`;
-        button.style.top = `${randomTop}px`;
-        });
-
-        // Инициализация начальной позиции кнопки
-        window.onload = function() {
-            button.style.left = '1100px';
-            button.style.top = '840px';
-        };
-        button.addEventListener('click', function() {
-            window.location.href = '/punishment';
-        });
-
-    </script>
 </body>

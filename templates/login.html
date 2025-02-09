@@ -21,10 +21,10 @@
             top: 50%; 
             left: 50%; 
             transform: translate(-50%, -50%); 
-            width: 300px; 
+            width: 320px; 
             padding: 20px; 
 
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5) !important; 
+            box-shadow: 0 0 3px rgba(255, 255, 255, 0.5) !important; 
             border-radius: 8px; 
             text-align: center; 
             backdrop-filter: blur(10px);
@@ -78,6 +78,7 @@
             flex-direction: column;
             align-items: center;
             cursor: pointer;
+            
         }
 
         .image1-container img {
@@ -86,21 +87,22 @@
             border-radius: 10px;
             transition: transform 0.3s ease;
             object-fit: cover;
+            transform: scale(0.7);
         }
         
         .image1-container:hover img {
-            transform: translateY(-70px);
+            transform: translateY(-90px);
         }
         /*текст в всплывающем изображении*/
         .text {
             margin-top: -90px;
             opacity: 0;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.4s ease;
         }
         
         .image1-container:hover .text {
             opacity: 1;
-            transition-delay: 0.3s;
+            transition-delay: 0.2s;
         }
         
         .hover-container {
@@ -116,23 +118,23 @@
         /*Всплывающая надпись на Вход*/
         .tooltip {
             position: absolute;
-            bottom: 100%; /* Расположение под текстом */
+            bottom: 100%;
             left: 50%;
             transform: translateX(-50%);
-            opacity: 0; /* Изначально скрыто */
-            background: rgba(0, 0, 0, 0.2); /* Полупрозрачный фон */
+            opacity: 0;
+            background: rgba(0, 0, 0, 0.2);
             color: white;
             padding: 20px 25px;
             border-radius: 5px;
             font-size: 15px;
             transition: opacity 0.5s ease;
-            pointer-events: none; /* Исключить из событий мыши */
+            pointer-events: none;
             white-space: nowrap;
             backdrop-filter: blur(10px);
         }
         
         .hover-container:hover .tooltip {
-            opacity: 1; /* Появление при наведении */
+            opacity: 1;
         }
         
         /*Изображения 2 котов (eyes)*/
@@ -170,10 +172,10 @@
         /* Текст над изображением */
         .image-tooltip {
             position: absolute;
-            top: 00%; /* Располагаем текст сверху */
+            top: 0%;
             left: 50%;
             transform: translateX(-50%);
-            opacity: 0; /* Изначально текст скрыт */
+            opacity: 0;
             color: white;
             padding: 6px 12px;
             border-radius: 10px;
@@ -189,6 +191,82 @@
         .image-container:hover .image-tooltip {
             opacity: 1;
         }
+
+        /*уведомление при нажатии на изображение*/
+        .popup1 { 
+            position: fixed; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            width: 300px; 
+            padding: 20px; 
+            background: rgba(0, 0, 0, 0.2); 
+            box-shadow: 0 0 3px rgba(255, 255, 255, 0.5); 
+            border-radius: 15px; 
+            text-align: center; 
+            backdrop-filter: blur(10px);
+            display: none; 
+            z-index: 1000;
+            
+        }
+
+        .popup1-header {
+            text-align: right;
+            display: flex; /* Включаем flex-контейнер */
+            justify-content: flex-end; /* Выравниваем содержимое по правому краю */
+        }
+
+        .close-btn1 {
+            background: transparent; 
+            border: none; 
+            font-size: 22px; 
+            cursor: pointer; 
+            color: #ffffff;
+            width: 24px; /* Фиксированная ширина */
+            height: 24px; /* Фиксированная высота */
+            padding: 0; /* Убираем внутренние отступы */
+            margin: 0; /* Убираем внешние отступы */
+            display: flex; /* Для выравнивания крестика по центру */
+            align-items: center; /* Вертикальное выравнивание */
+            justify-content: center; /* Горизонтальное выравнивание */
+            line-height: 1; /* Убираем лишний интервал вокруг текста */
+        }
+
+        .popup-footer1 {
+            margin-top: 20px;
+        }
+
+        .overlay1 { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(0, 0, 0, 0.5); 
+            display: none; 
+            z-index: 999; 
+        }
+
+        .btn1 { 
+            padding: 10px 20px; 
+            background: #007bff; 
+            color: #ffffff; 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .btn:hover1 { 
+            background: #0056b3; 
+        }
+
+        .popup1-body {
+            color: #ffffff;
+            font-size: 20px;
+        }
+
+
 
     </style>
 </head>
@@ -213,14 +291,10 @@
     <div class="overlay" id="overlay"></div>
 
     <div class="popup" id="popup">
-        <p>Пример 1:<br>Мы не виделись несколько дней и наконец встретились где-то.
-            Мы долго обнимаемся и я тебе говорю: "keywords" безумно сильно ❤️ <br>
-            Пример 2:<br> Мы гуляем по вечерниму Питеру и мы выходим на Невский.
-            Я останавливаю тебя чтоб обнять и говорю: "keywords" очень очень сильно ❤️
-            <br><br>
-            ключ входа ("keywords") надо писать маленькими буквами с пробелами.<br>Это 3 важных слова)
-            <br><br>
-            можешь навестись на кнопку входа по
+        <p>пример: "keyword" очень очень сильно ❤️ <br>
+            котик справа снизу тебе подсказывает) <br>
+            это 3 важных слова <br>
+            (можешь навестись на кнопку входа по приколу)
         </p>
         <div class="popup-footer">
             <button class="btn" onclick="closePopup()">Понятно</button>
@@ -241,6 +315,21 @@
         <div class="image-tooltip">Мяу мяу мяу)</div>
     </div>
 
+    <div class="overlay1" id="overlay1"></div>
+
+    <div class="popup1" id="popup1">
+        <div class="popup1-header">
+            <button class="close-btn1" id="close-btn1">&times;</button>
+        </div>
+        <div class="popup1-body">
+            <p>я люблю тебя))
+            </p>
+        </div>
+        <div class="popup-footer1">
+            <button class="btn1" id="ok-btn1">СПАСИБО!</button>
+        </div>
+    </div>
+
 
     <script>
         function openPopup() {
@@ -252,6 +341,51 @@
             document.getElementById('popup').style.display = 'none';
             document.getElementById('overlay').style.display = 'none';
         }
+
+        // Получаем элементы DOM
+        const overlay = document.getElementById('overlay');
+        const popup = document.getElementById('popup');
+        const closeBtn = document.getElementById('close-btn1');
+        const okBtn = document.getElementById('ok-btn1');
+
+        const imageContainers = document.querySelectorAll('.image-container');
+        const overlay1 = document.getElementById('overlay1');
+        const popup1 = document.getElementById('popup1');
+        const closeBtn1 = document.getElementById('close-btn1');
+        const okBtn1 = document.getElementById('ok-btn1');
+    
+        // Функция для показа popup и overlay
+        function showPopup1() {
+            overlay1.style.display = 'block';
+            popup1.style.display = 'block';
+        }
+    
+        // Функция для скрытия popup и overlay
+        function hidePopup1() {
+            overlay1.style.display = 'none';
+            popup1.style.display = 'none';
+        }
+
+        // Функция для скрытия popup и overlay
+        function hidePopup() {
+            overlay.style.display = 'none';
+            popup.style.display = 'none';
+        }
+    
+        // Добавляем обработчики событий на изображения
+        imageContainers.forEach(container => {
+            container.addEventListener('click', showPopup1);
+        });
+    
+        // Добавляем обработчики событий на кнопки закрытия и OK
+        closeBtn1.addEventListener('click', hidePopup1);
+        okBtn1.addEventListener('click', hidePopup1);
+    
+        // Закрываем popup при клике на overlay
+        overlay1.addEventListener('click', hidePopup1);
+
+        // Закрываем popup при клике на overlay
+        overlay.addEventListener('click', hidePopup);
     </script>
 </body>
 </html>

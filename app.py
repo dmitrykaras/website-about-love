@@ -21,12 +21,20 @@ def login():
         password = request.form['password']
         
         if username in users and users[username] == password:
-            return redirect(url_for('love_general_1'))
+            return redirect(url_for('transitional'))
         else:
             flash('Неверный логин или пароль!', 'error')
             return redirect(url_for('login'))
     return render_template('login.html',background_image='/static/images/image.jpg')
 
+@app.route('/transitional')
+def transitional():
+    return render_template('transitional.html')
+
+
+@app.route('/punishment')
+def pipiska():
+    return render_template('punishment.html')
 
 @app.route('/love_general_1')
 def love_general_1():
