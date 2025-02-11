@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мы у метро</title>
+    <title>Учёба(</title>
     <style>
         body {
             margin: 0;
@@ -85,6 +85,7 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
             white-space: nowrap;
         }
+
         /*текст справа снизу*/
         .text-bottom {
             position: absolute;
@@ -102,7 +103,6 @@
             color: inherit;
             text-decoration: none;
         }
-
 
         /*кнопка продолжить >>>*/
         .button {
@@ -126,15 +126,6 @@
             transform: scale(1.3);
         }
 
-        /* Стили для "или" */
-        .or-container {
-            position: relative;
-            display: inline-block;
-            font-size: 45px;
-            color: #ffffff;
-            margin: 20px 0;
-            cursor: pointer;
-        }
         /*уведомление при нажатии на изображение*/
         .popup { 
             position: fixed; 
@@ -199,31 +190,26 @@
             font-size: 20px;
         }
 
-        
     </style>
 </head>
 <body>
     <div class="header-text">
-        08:35 или 10:25 — и снова кто-то из нас<br> ждёт другого у метро)
+        Теперь на учёбу... <br>💀💀💀
     </div>
     <div class="text-bottom">
-        <a href="https://yandex.ru/maps/-/CHqEM66x" target="_blank">Сенная площадь</a>
+        <a href="https://yandex.ru/maps/-/CHqVbQYP" target="_blank">ПГУПС</a>
     </div>
 
-    <div class="or-container">
-        или
-    </div>
-
-    <a href="/love_general_2" class="button">Продолжить &gt;&gt;&gt;</a>
+    <a href="/love_general_4" class="button">Продолжить &gt;&gt;&gt;</a>
 
     <!-- Контейнеры с изображениями -->
     <div class="image-container left">
-        <img src="{{ url_for('static', filename='images/d_metro.png') }}" alt="Изображение 1">
-        <div class="image-tooltip">ну и где он?(</div>
+        <img src="{{ url_for('static', filename='images/study_together.png') }}" alt="Изображение 1">
+        <div class="image-tooltip">ммм...(</div>
     </div>
     <div class="image-container right">
-        <img src="{{ url_for('static', filename='images/m_metro.png') }}" alt="Изображение 2">
-        <div class="image-tooltip">ладно, подожду ещё...</div>
+        <img src="{{ url_for('static', filename='images/hats.png') }}" alt="Изображение 2">
+        <div class="image-tooltip">урааа!!</div>
     </div>
 
 
@@ -235,7 +221,7 @@
             <button class="close-btn" id="close-btn">&times;</button>
         </div>
         <div class="popup-body">
-            <p>я не знаю что сказать... <br>
+            <p>я всё также не знаю что сказать... <br>
                мяу мяу мяу)<br>
             </p>
         </div>

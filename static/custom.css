@@ -21,13 +21,13 @@ body {
 }
 
 .outlined-text {
-    font-size: 24px; /* Размер текста */
-    color: white; /* Цвет текста */
+    font-size: 24px;
+    color: white;
     text-shadow: 
-        -1px -1px 0 black, /* Верхний левый контур */
-        1px -1px 0 black,  /* Верхний правый контур */
-        -1px 1px 0 black,  /* Нижний левый контур */
-        1px 1px 0 black;   /* Нижний правый контур */
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
 }
 
 label {

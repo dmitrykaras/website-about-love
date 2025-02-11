@@ -33,7 +33,7 @@ def transitional():
 
 
 @app.route('/punishment')
-def pipiska():
+def punishment():
     return render_template('punishment.html')
 
 @app.route('/love_general_1')
@@ -43,6 +43,10 @@ def love_general_1():
 @app.route('/love_general_2')
 def love_general_2():
     return render_template('love_general_2.html')
+
+@app.route('/love_general_3')
+def love_general_3():
+    return render_template('love_general_3.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
