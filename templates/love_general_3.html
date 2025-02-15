@@ -152,7 +152,7 @@
             background: transparent; 
             border: none; 
             font-size: 16px; 
-            cursor: pointer; 
+            cursor: grabbing; 
             color:#ffffff;
         }
 
@@ -204,11 +204,11 @@
 
     <!-- Контейнеры с изображениями -->
     <div class="image-container left">
-        <img src="{{ url_for('static', filename='images/study_together.png') }}" alt="Изображение 1">
+        <img src="{{ url_for('static', filename='images/love_general_3/study_together.png') }}" alt="Изображение 1">
         <div class="image-tooltip">ммм...(</div>
     </div>
     <div class="image-container right">
-        <img src="{{ url_for('static', filename='images/hats.png') }}" alt="Изображение 2">
+        <img src="{{ url_for('static', filename='images/love_general_3/hats.png') }}" alt="Изображение 2">
         <div class="image-tooltip">урааа!!</div>
     </div>
 
@@ -218,15 +218,15 @@
 
     <div class="popup" id="popup">
         <div class="popup-header">
-            <button class="close-btn" id="close-btn">&times;</button>
+            <button class="close-btn" id="close-btn" disabled>&times;</button>
         </div>
         <div class="popup-body">
-            <p>я всё также не знаю что сказать... <br>
+            <p>а я люблю тебя сильно сильно) <br>
                мяу мяу мяу)<br>
             </p>
         </div>
         <div class="popup-footer">
-            <button class="btn" id="ok-btn">Ладно</button>
+            <button class="btn" id="ok-btn">и я тебя)</button>
         </div>
     </div>
 

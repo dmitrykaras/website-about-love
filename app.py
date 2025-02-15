@@ -48,5 +48,21 @@ def love_general_2():
 def love_general_3():
     return render_template('love_general_3.html')
 
+@app.route('/love_general_4')
+def love_general_4():
+    return render_template('love_general_4.html')
+
+@app.route('/love_general_5')
+def love_general_5():
+    return render_template('love_general_5.html')
+
+@app.route('/love_general_6')
+def love_general_6():
+    return render_template('love_general_6.html')
+
+@app.route('/love_general_7')
+def love_general_7():
+    return render_template('love_general_7.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
