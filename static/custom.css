@@ -1,7 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(18, 18, 20);
-    background-image: url('{{ background_image }}');
+    background-image: url('/static/images/bg.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -12,6 +11,7 @@ body {
     align-items: center;
 }
 
+/*текст, кнопки и поля для ввода*/
 .login-container {
     background-color: transparent;
     padding: 20px;
@@ -20,16 +20,7 @@ body {
     text-align: center;
 }
 
-.outlined-text {
-    font-size: 24px;
-    color: white;
-    text-shadow: 
-        -1px -1px 0 black,
-        1px -1px 0 black,
-        -1px 1px 0 black,
-        1px 1px 0 black;
-}
-
+/*надписи*/
 label {
     display: block;
     text-align: left;
@@ -45,7 +36,8 @@ input {
     border-radius: 4px;
 }
 
-button {
+/*кнпока входа для /login*/
+button.buttons {
     width: 100%;
     padding: 10px;
     background: #007bff;
@@ -60,38 +52,385 @@ button {
 
 button:hover {
     background: #0056b3;
+    
 }
 
-.button {
-    padding: 9px;
-    font-size: 16px;
-    color: white;
-    background-color: #007bff;
-    text-decoration: none;
-    border-radius: 5px;
+/*уведомление при нажатии на изображение*/
+.popup { 
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 300px; 
+    padding: 20px; 
+    background: rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.5); 
+    border-radius: 15px; 
+    text-align: center; 
+    backdrop-filter: blur(10px);
+    display: none; 
+    z-index: 1000;
+    
+}
+
+.popup-header {
+    text-align: right;
+}
+
+.close-btn {
+    background: transparent !important; 
+    border: none; 
+    font-size: 16px; 
+    cursor: pointer; 
+    color:#ffffff;
+    outline: none;
+}
+
+.close-btn:focus {
+    outline: none; /* Убираем обводку при фокусе */
+}
+
+.close-btn--3 {
+    cursor: grabbing;
+}
+
+.popup-footer {
+    margin-top: 20px;
+}
+
+.overlay { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.5); 
+    display: none; 
+    z-index: 999; 
+}
+
+.btn { 
+    width: 100%;
+    padding: 10px; 
+    background: #007bff; 
+    color: #ffffff; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer;
+    font-size: 18px;
+    white-space: nowrap;
+
+}
+
+.btn:hover { 
+    background: #0056b3; 
+}
+
+.popup-body {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+/*Всплывающее изображение справа снизу*/
+.image1-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    
+}
+
+.image1-container img {
+    width: 190px;
+    height: 190px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    transform: scale(0.7);
+}
+
+.image1-container:hover img {
+    transform: translateY(-90px);
+}
+
+/*текст в всплывающем изображении*/
+.text {
+    margin-top: -90px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.image1-container:hover .text {
+    opacity: 1;
+    transition-delay: 0.2s;
+}
+
+.hover-container {
+    position: relative;
+    display: inline-block;
     text-align: center;
-    transition: background-color 0.7s ease;
+}
+
+.hover-container h1 {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/*Всплывающая надпись на Вход*/
+.tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    padding: 20px 25px;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    white-space: nowrap;
+    backdrop-filter: blur(10px);
+}
+
+.hover-container:hover .tooltip {
+    opacity: 1;
+}
+
+/*Изображения 2 котов*/
+.image-container {
+    position: fixed;
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    transform: scale(1.3);
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-container.left {
+    left: 450px;
+    top: 380px;
+    
+}
+
+.image-container.right {
+    right: 450px;
+    top: 400px;
+}
+
+.image-container:hover {
+    transform: scale(1.4);
+}
+
+/* Текст над изображением */
+.image-tooltip {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    white-space: nowrap;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+}
+
+/* Текст видим при наведении */
+.image-container:hover .image-tooltip {
+    opacity: 1;
+}
+
+/*уведомление при нажатии на изображение*/
+.popup1 { 
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 300px; 
+    padding: 20px; 
+    background: rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.5); 
+    border-radius: 15px; 
+    text-align: center; 
+    backdrop-filter: blur(10px);
+    display: none; 
+    z-index: 1000;
+    
+}
+
+.popup1-header {
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-btn1 {
+    background: transparent; 
+    border: none; 
+    font-size: 22px; 
+    cursor: pointer; 
+    color: #ffffff;
+    width: 24px; 
+    height: 24px; 
+    padding: 0; 
+    margin: 0; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.popup-footer1 {
+    margin-top: 20px;
+}
+
+.overlay1 { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.5); 
+    display: none; 
+    z-index: 999; 
+}
+
+.btn1 { 
+    padding: 10px 20px; 
+    background: #007bff; 
+    color: #ffffff; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.btn:hover1 { 
+    background: #0056b3; 
+}
+
+.popup1-body {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+/*анимация*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Применение анимации */
+.fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.fade-in--popup {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/*Текст в центре для /transitional*/
+.text-center {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 34px;
+    color: #ffffff;
+}
+
+/*кнопка продолжить*/
+.button {
+    position: absolute;
+    bottom: 70px;
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: 0.5s ease;
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
 }
 
 .button:hover {
     background-color: #0056b3;
+    transform: scale(1.3);
 }
 
-.register-page {
-    background-color: #5e5e5e;
-    background-size: cover;
-    background-position: center;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-.header {
+/*убегающая кнопка*/
+.unclickable-button {
     position: absolute;
-    top: 20px;
-    font-size: 2em;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    width: 150px;
+    height: 50px; 
+    color: white;
+    transition: top 1s ease, left 1s ease; 
+}
+
+/*текст сверху*/
+.header-text {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 56px;
+    font-weight: bold;
+    color: white;
     text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+}
+/*текст справа снизу*/
+.text-bottom {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+}
+
+/* Стили для ссылки */
+.text-bottom a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Стили для "или" */
+.or-container {
+    position: relative;
+    display: inline-block;
+    font-size: 45px;
+    color: #ffffff;
+    margin: 20px 0;
+    cursor: pointer;
 }

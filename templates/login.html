@@ -3,275 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title class="outlined-text">Вход ❤️</title>
+    <title>Вход ❤️</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icon.png') }}">
-    <style>
-        /*сам сайт*/
-        body {
-            background-image: url("{{ url_for('static', filename='images/bg.jpg') }}");
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            margin: 0;
-        }
-        /*уведомление*/
-        .popup { 
-            position: fixed; 
-            top: 50%; 
-            left: 50%; 
-            transform: translate(-50%, -50%); 
-            width: 320px; 
-            padding: 20px; 
-
-            box-shadow: 0 0 3px rgba(255, 255, 255, 0.5) !important; 
-            border-radius: 8px; 
-            text-align: center; 
-            backdrop-filter: blur(10px);
-            display: none; 
-            z-index: 1000;
-        }
-
-        .popup-header {
-            text-align: right;
-        }
-
-        .close-btn {
-            background: transparent; 
-            border: none; 
-            font-size: 16px; 
-            cursor: pointer; 
-        }
-
-        .popup-footer {
-            margin-top: 20px;
-        }
-
-        .overlay { 
-            position: fixed; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            background: rgba(0, 0, 0, 0.5); 
-            display: none; 
-            z-index: 999; 
-        }
-
-        .btn { 
-            padding: 10px 20px; 
-            background: #007bff; 
-            color: #fff; 
-            border: none; 
-            border-radius: 4px; 
-            cursor: pointer; 
-        }
-
-        .btn:hover { background: #0056b3; }
-
-        /*Всплывающее изображение справа снизу*/
-        .image1-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            cursor: pointer;
-            
-        }
-
-        .image1-container img {
-            width: 190px;
-            height: 190px;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-            object-fit: cover;
-            transform: scale(0.7);
-        }
-        
-        .image1-container:hover img {
-            transform: translateY(-90px);
-        }
-        /*текст в всплывающем изображении*/
-        .text {
-            margin-top: -90px;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-        
-        .image1-container:hover .text {
-            opacity: 1;
-            transition-delay: 0.2s;
-        }
-        
-        .hover-container {
-            position: relative;
-            display: inline-block;
-            text-align: center;
-        }
-        
-        .hover-container h1 {
-            font-size: 24px;
-            cursor: pointer;
-        }
-        /*Всплывающая надпись на Вход*/
-        .tooltip {
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0;
-            background: rgba(0, 0, 0, 0.2);
-            color: white;
-            padding: 20px 25px;
-            border-radius: 10px;
-            font-size: 18px;
-            transition: opacity 0.5s ease;
-            pointer-events: none;
-            white-space: nowrap;
-            backdrop-filter: blur(10px);
-        }
-        
-        .hover-container:hover .tooltip {
-            opacity: 1;
-        }
-        
-        /*Изображения 2 котов (eyes)*/
-        .image-container {
-            position: fixed;
-            width: 250px;
-            height: 250px;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            transform: scale(1.3);
-        }
-
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .image-container.left {
-            left: 450px;
-            top: 380px;
-            
-        }
-
-        .image-container.right {
-            right: 450px;
-            top: 400px;
-        }
-
-        .image-container:hover {
-            transform: scale(1.4);
-        }
-
-        /* Текст над изображением */
-        .image-tooltip {
-            position: absolute;
-            top: 0%;
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 10px;
-            font-size: 15px;
-            transition: opacity 0.5s ease;
-            pointer-events: none;
-            white-space: nowrap;
-            background-color: rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(2px);
-        }
-
-        /* Текст видим при наведении */
-        .image-container:hover .image-tooltip {
-            opacity: 1;
-        }
-
-        /*уведомление при нажатии на изображение*/
-        .popup1 { 
-            position: fixed; 
-            top: 50%; 
-            left: 50%; 
-            transform: translate(-50%, -50%); 
-            width: 300px; 
-            padding: 20px; 
-            background: rgba(0, 0, 0, 0.2); 
-            box-shadow: 0 0 3px rgba(255, 255, 255, 0.5); 
-            border-radius: 15px; 
-            text-align: center; 
-            backdrop-filter: blur(10px);
-            display: none; 
-            z-index: 1000;
-            
-        }
-
-        .popup1-header {
-            text-align: right;
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        .close-btn1 {
-            background: transparent; 
-            border: none; 
-            font-size: 22px; 
-            cursor: pointer; 
-            color: #ffffff;
-            width: 24px; 
-            height: 24px; 
-            padding: 0; 
-            margin: 0; 
-            display: flex; 
-            align-items: center;
-            justify-content: center;
-            line-height: 1;
-        }
-
-        .popup-footer1 {
-            margin-top: 20px;
-        }
-
-        .overlay1 { 
-            position: fixed; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            background: rgba(0, 0, 0, 0.5); 
-            display: none; 
-            z-index: 999; 
-        }
-
-        .btn1 { 
-            padding: 10px 20px; 
-            background: #007bff; 
-            color: #ffffff; 
-            border: none; 
-            border-radius: 4px; 
-            cursor: pointer;
-            font-size: 18px;
-        }
-
-        .btn:hover1 { 
-            background: #0056b3; 
-        }
-
-        .popup1-body {
-            color: #ffffff;
-            font-size: 20px;
-        }
-
-
-
-    </style>
 </head>
 <body>
-    <div class="login-container">
+    <div class="login-container fade-in">
         <div class="hover-container">
             <h1>Вход</h1>
             <div class="tooltip">Строго по спискам!!!</div>
@@ -284,13 +21,14 @@
             <label for="password">Я хочу сказать:</label>
             <input type="text" id="password" name="password" required>
             
-            <button type="submit">Войти</button><br><br>
+            <button class="buttons" type="submit">Войти</button><br><br>
         </form>
         <button class="btn" onclick="openPopup()">Не понимаешь? <br> Показать подсказку?</button>
     </div>
-    <div class="overlay" id="overlay"></div>
 
-    <div class="popup" id="popup">
+    <div class="overlay fade-in--popup" id="overlay"></div>
+
+    <div class="popup fade-in--popup" id="popup">
         <p>пример: "keyword" очень очень сильно ❤️ <br>
             котик справа снизу тебе подсказывает) <br>
             это 3 важных слова <br>
@@ -301,32 +39,33 @@
         </div>
     </div>
     
-    <div class="image1-container">
+    <div class="image1-container fade-in">
         <img src="{{ url_for('static', filename='images/login/mpg.png') }}" alt="Изображение">
         <div class="text">Я люблю тебя ❤️<br>А ты меня?)</div>
     </div>
 
-    <div class="image-container left">
+    <div class="image-container left fade-in">
         <img src="{{ url_for('static', filename='images/login/d_eyes.png') }}" alt="Изображение 1">
         <div class="image-tooltip">Мяу мяу мяу)</div>
     </div>
-    <div class="image-container right">
+    <div class="image-container right fade-in">
         <img src="{{ url_for('static', filename='images/login/m_eyes.png') }}" alt="Изображение 2">
         <div class="image-tooltip">Мяу мяу мяу)</div>
     </div>
 
-    <div class="overlay1" id="overlay1"></div>
+    <div class="overlay1 fade-in--popup" id="overlay1"></div>
 
-    <div class="popup1" id="popup1">
+    <div class="popup1 fade-in--popup" id="popup1">
         <div class="popup1-header">
             <button class="close-btn1" id="close-btn1">&times;</button>
         </div>
         <div class="popup1-body">
-            <p>я люблю тебя))
+            <p>я люблю тебя))<br>
+                мяу мяу мяу)
             </p>
         </div>
         <div class="popup-footer1">
-            <button class="btn1" id="ok-btn1">СПАСИБО!</button>
+            <button class="btn1" id="ok-btn1">Спасибо!</button>
         </div>
     </div>
 

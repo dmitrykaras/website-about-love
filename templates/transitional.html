@@ -6,90 +6,18 @@
     <title class="outlined-text">Предупрежение!!!</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icon.png') }}">
-    <style>
-        body {
-            background-image: url("{{ url_for('static', filename='images/bg.jpg') }}");
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        /* Общие стили для центрирования текста */
-        .text-center {
-            text-align: center;
-            font-family: Arial, sans-serif;
-            font-size: 34px;
-            color: #ffffff;
-        }
-
-        /* Ключевые кадры для анимации Fade In */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Применение анимации */
-        .fade-in {
-            animation: fadeIn 3s ease-in-out;
-        }
-
-        /*кнопка продолжить >>>*/
-        .button {
-            position: absolute;
-            bottom: 70px;
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #007bff;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            font-size: 18px;
-            border-radius: 8px;
-            transition: 0.5s ease;
-            transform: scale(1.2);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
-        }
-        
-        .button:hover {
-            background-color: #0056b3;
-            transform: scale(1.3);
-        }
-
-        .unclickable-button {
-            position: absolute;
-            padding: 10px 20px;
-            font-size: 18px;
-            cursor: pointer;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            width: 150px;
-            height: 50px; 
-            transition: top 1s ease, left 1s ease; 
-            left: -160px;
-        }
-
-        
-
-
-
-    </style>
 </head>
 <body>
     <div class="text-center fade-in">
         <p>Я делал этот сайт полность самостоятельно (chat-gpt не в счёт)<br>
             и я очень надеюсь что тебе понравится. Надеюсь <br>
             ты не испугалась моих художеств, ведь это и есть мой ... <br>
+            (первые страницы кринж, но дальше будет лучше... извините...)
         </p>
     </div>
     <a href="/love_general_1" class="button">ЧИТАИТЬ ДАЛЕЕ...</a>
 
-    <button class="unclickable-button" id="movingButton">отказаться...</button>
+    <button class="unclickable-button fade-in" id="movingButton">отказаться...</button>
 
     <script>
         const button = document.getElementById('movingButton');

@@ -6,99 +6,6 @@
     <title class="outlined-text">...</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icon.png') }}">
-    <style>
-        body {
-            background-image: url("{{ url_for('static', filename='images/bg_punishment.jpg') }}");
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        /* Общие стили для центрирования текста */
-        .text-center {
-            position: absolute; 
-            top: 220px;
-            font-family: Arial, sans-serif;
-            font-size: 34px;
-            color: #ffffff;
-            text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5)
-        }
-
-        /*Анимация Fade In */
-        @keyframes fadeIn {
-            from {
-                opacity: 0; 
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Применение анимации */
-        .fade-in {
-            animation: fadeIn 3s ease-in-out;
-        }
-
-        /*кнопка продолжить >>>*/
-        .button {
-            position: absolute;
-            bottom: 70px;
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #007bff;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            font-size: 18px;
-            border-radius: 8px;
-            transition: 0.5s ease;
-            transform: scale(1.2);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
-        }
-        
-        .button:hover {
-            background-color: #0056b3;
-            transform: scale(1.3);
-        }
-        
-        /*изображение кота с ножом*/
-        .image-container {
-            position: fixed;
-            width: 250px;
-            height: 250px;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .image-container.right {
-            right: 500px;
-            top: 450px;
-            transform: scale(1.8);
-        }
-
-        .image-container:hover {
-            transform: scale(2);
-        }
-
-        .image-bg {
-            position: fixed;
-            top: 15px;
-            transform: scale(1);
-            overflow: cover;
-            
-        }
-
-
-    </style>
 </head>
 <body>
     <div class="text-center fade-in">
@@ -106,11 +13,11 @@
         </p>
     </div>
 
-    <div class="image-container right">
+    <div class="image-container right fade-in">
         <img src="{{ url_for('static', filename='images/punishnent/knife.png') }}" alt="Изображение 2">
     </div>
 
-    <div class="image-bg">
+    <div class="image-bg fade-in">
         <img src="{{ url_for('static', filename='images/punishnent/nadz.png') }}">
     </div>
 
