@@ -19,14 +19,16 @@
         или
     </div>
 
-    <a href="/love_general_2" class="button">Продолжить &gt;&gt;&gt;</a>
+    <a href="/love_general_2" class="button button--origin">Продолжить &gt;&gt;&gt;</a>
 
     <div class="image-container left fade-in">
-        <img src="{{ url_for('static', filename='images/love_general_1/d_metro.png') }}" alt="Изображение 1">
+        <img src="{{ url_for('static', filename='images/love_general_1/d_metro.png') }}" alt="Изображение 1" 
+        data-sound="{{ url_for('static', filename='sounds/sound1.mp3') }}">
         <div class="image-tooltip">ну и где он?(</div>
     </div>
     <div class="image-container right fade-in">
-        <img src="{{ url_for('static', filename='images/love_general_1/m_metro.png') }}" alt="Изображение 2">
+        <img src="{{ url_for('static', filename='images/love_general_1/m_metro.png') }}" alt="Изображение 2"
+        data-sound="{{ url_for('static', filename='sounds/sound1.mp3') }}">
         <div class="image-tooltip">ладно, подожду ещё...</div>
     </div>
 
@@ -46,6 +48,8 @@
         </div>
     </div>
 
+    <audio id="hover-sound"></audio>
+
     <script>
         // Получаем элементы DOM
         const imageContainers = document.querySelectorAll('.image-container');
@@ -53,6 +57,8 @@
         const popup = document.getElementById('popup');
         const closeBtn = document.getElementById('close-btn');
         const okBtn = document.getElementById('ok-btn');
+        const hoverSound = document.getElementById('hover-sound');
+        const images = document.querySelectorAll('.image-container img');
     
         // Функция для показа popup и overlay
         function showPopup() {
@@ -77,6 +83,18 @@
     
         // Закрываем popup при клике на overlay
         overlay.addEventListener('click', hidePopup);
+
+        images.forEach(image => {
+            image.addEventListener('mouseenter', () => {
+                const soundFile = image.getAttribute('data-sound');
+                if (soundFile) {
+                    hoverSound.pause();
+                    hoverSound.currentTime = 0;
+                    hoverSound.src = soundFile;
+                    hoverSound.play();
+                }
+            });
+        });
     </script>
 </body>
 </html>

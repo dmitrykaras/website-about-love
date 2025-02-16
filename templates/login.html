@@ -45,11 +45,11 @@
     </div>
 
     <div class="image-container left fade-in">
-        <img src="{{ url_for('static', filename='images/login/d_eyes.png') }}" alt="Изображение 1">
+        <img src="{{ url_for('static', filename='images/login/d_eyes.png') }}" alt="Изображение 1" data-sound="{{ url_for('static', filename='sounds/sound1.mp3') }}">
         <div class="image-tooltip">Мяу мяу мяу)</div>
     </div>
     <div class="image-container right fade-in">
-        <img src="{{ url_for('static', filename='images/login/m_eyes.png') }}" alt="Изображение 2">
+        <img src="{{ url_for('static', filename='images/login/m_eyes.png') }}" alt="Изображение 2" data-sound="{{ url_for('static', filename='sounds/sound1.mp3') }}">
         <div class="image-tooltip">Мяу мяу мяу)</div>
     </div>
 
@@ -69,61 +69,8 @@
         </div>
     </div>
 
-    <script>
-        function openPopup() {
-            document.getElementById('popup').style.display = 'block';
-            document.getElementById('overlay').style.display = 'block';
-        }
-
-        function closePopup() {
-            document.getElementById('popup').style.display = 'none';
-            document.getElementById('overlay').style.display = 'none';
-        }
-
-        // Получаем элементы DOM
-        const overlay = document.getElementById('overlay');
-        const popup = document.getElementById('popup');
-        const closeBtn = document.getElementById('close-btn1');
-        const okBtn = document.getElementById('ok-btn1');
-
-        const imageContainers = document.querySelectorAll('.image-container');
-        const overlay1 = document.getElementById('overlay1');
-        const popup1 = document.getElementById('popup1');
-        const closeBtn1 = document.getElementById('close-btn1');
-        const okBtn1 = document.getElementById('ok-btn1');
+    <audio id="hover-sound"></audio>
     
-        // Функция для показа popup и overlay
-        function showPopup1() {
-            overlay1.style.display = 'block';
-            popup1.style.display = 'block';
-        }
-    
-        // Функция для скрытия popup и overlay
-        function hidePopup1() {
-            overlay1.style.display = 'none';
-            popup1.style.display = 'none';
-        }
-
-        // Функция для скрытия popup и overlay
-        function hidePopup() {
-            overlay.style.display = 'none';
-            popup.style.display = 'none';
-        }
-    
-        // Добавляем обработчики событий на изображения
-        imageContainers.forEach(container => {
-            container.addEventListener('click', showPopup1);
-        });
-    
-        // Добавляем обработчики событий на кнопки закрытия и OK
-        closeBtn1.addEventListener('click', hidePopup1);
-        okBtn1.addEventListener('click', hidePopup1);
-    
-        // Закрываем popup при клике на overlay
-        overlay1.addEventListener('click', hidePopup1);
-
-        // Закрываем popup при клике на overlay
-        overlay.addEventListener('click', hidePopup);
-    </script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

@@ -26,13 +26,16 @@
     </div>
 
     <a href="/love_general_4" class="button">Продолжить &gt;&gt;&gt;</a>
+    <a href="/love_general_2" class="button button--back"><<< Назад</a>
 
     <div class="image-container left fade-in">
-        <img src="{{ url_for('static', filename='images/love_general_3/study_together.png') }}" alt="Изображение 1">
+        <img src="{{ url_for('static', filename='images/love_general_3/study_together.png') }}" 
+        alt="Изображение 1" data-sound="{{ url_for('static', filename='sounds/sound1.mp3') }}">>
         <div class="image-tooltip">ммм...(</div>
     </div>
     <div class="image-container right fade-in">
-        <img src="{{ url_for('static', filename='images/love_general_3/hats.png') }}" alt="Изображение 2">
+        <img src="{{ url_for('static', filename='images/love_general_3/hats.png') }}" alt="Изображение 2"
+        data-sound="{{ url_for('static', filename='sounds/sound1.mp3') }}">>
         <div class="image-tooltip">урааа!!</div>
     </div>
 
@@ -52,6 +55,7 @@
         </div>
     </div>
 
+    <audio id="hover-sound"></audio>
     <script>
         // Получаем элементы DOM
         const imageContainers = document.querySelectorAll('.image-container');

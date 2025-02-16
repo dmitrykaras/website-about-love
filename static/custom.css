@@ -91,7 +91,7 @@ button:hover {
 }
 
 .close-btn:focus {
-    outline: none; /* Убираем обводку при фокусе */
+    outline: none;
 }
 
 .close-btn--3 {
@@ -378,10 +378,21 @@ button:hover {
     text-align: center;
     text-decoration: none;
     font-size: 18px;
+    left: 950px;
     border-radius: 8px;
     transition: 0.5s ease;
     transform: scale(1.2);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+.button--back {
+    left: 720px;
+    background-color: rgba(0, 123, 255, 0);
+    backdrop-filter: blur(10px);
+}
+
+.button--origin {
+    left: 850px;
 }
 
 .button--punish {
@@ -513,9 +524,19 @@ button:hover {
     left: 55%;
 }
 
-.image-center {
-    position: absolute;
-    top: -60px;
-    left: -35px;
-    transform: scale(0.87);
-}
+
+.image-container-tog {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+  }
+  
+  .image-container-tog img {
+    max-width: 100%;
+    height: 220px;
+    transition: transform 0.2s ease;
+  }
+
+  .image-container-tog img:hover {
+    transform: scale(1.3); /* Увеличение на 10% */
+  }
