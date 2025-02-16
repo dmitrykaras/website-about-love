@@ -64,5 +64,13 @@ def love_general_6():
 def love_general_7():
     return render_template('love_general_7.html')
 
+@app.route('/proverbs')
+def proverbs():
+    return render_template('proverbs.html')
+
+@app.route('/together')
+def together():
+    return render_template('together.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

@@ -11,6 +11,10 @@ body {
     align-items: center;
 }
 
+.body--punish {
+    background-image: url('/static/images/bg_punishment.jpg');
+}
+
 /*текст, кнопки и поля для ввода*/
 .login-container {
     background-color: transparent;
@@ -209,7 +213,7 @@ button:hover {
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s ease;
-    transform: scale(1.3);
+    transform: scale(1.5);
 }
 
 .image-container img {
@@ -230,7 +234,7 @@ button:hover {
 }
 
 .image-container:hover {
-    transform: scale(1.4);
+    transform: scale(1.7);
 }
 
 /* Текст над изображением */
@@ -242,13 +246,13 @@ button:hover {
     opacity: 0;
     color: white;
     padding: 6px 12px;
-    border-radius: 10px;
-    font-size: 15px;
+    border-radius: 5px;
+    font-size: 12px;
     transition: opacity 0.5s ease;
     pointer-events: none;
     white-space: nowrap;
-    background-color: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(7px);
 }
 
 /* Текст видим при наведении */
@@ -357,6 +361,12 @@ button:hover {
     color: #ffffff;
 }
 
+.text-center--punish {
+    position: absolute; 
+    top: 220px;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5)
+}
+
 /*кнопка продолжить*/
 .button {
     position: absolute;
@@ -374,8 +384,17 @@ button:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
 }
 
+.button--punish {
+    background-color: #000000;
+}
+
 .button:hover {
     background-color: #0056b3;
+    transform: scale(1.3);
+}
+
+.button--punish:hover {
+    background-color: #3d3d3d;
     transform: scale(1.3);
 }
 
@@ -391,7 +410,7 @@ button:hover {
     width: 150px;
     height: 50px; 
     color: white;
-    transition: top 1s ease, left 1s ease; 
+    transition: top 2s ease, left 2s ease; 
 }
 
 /*текст сверху*/
@@ -433,4 +452,70 @@ button:hover {
     color: #ffffff;
     margin: 20px 0;
     cursor: pointer;
+}
+
+/*изображение для второго слоя сверху*/
+.image-bg {
+    position: fixed;
+    top: 15px;
+    transform: scale(1);
+    overflow: cover;
+}
+
+/*текст для пословиц*/
+.text-proverbs {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    font-size: 30px;
+    color: rgba(500, 500, 500, 0.85);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+}
+
+.text-proverbs--1 {
+    top: 30%;
+    left: 10%;
+}
+
+.text-proverbs--2 {
+    top: 40%;
+    left: 10%;
+}
+
+.text-proverbs--3 {
+    top: 50%;
+    left: 10%;
+}
+
+.text-proverbs--4 {
+    top: 60%;
+    left: 10%;
+}
+
+.text-proverbs--5 {
+    top: 30%;
+    left: 55%;
+}
+
+.text-proverbs--6 {
+    top: 40%;
+    left: 55%;
+}
+
+.text-proverbs--7 {
+    top: 50%;
+    left: 55%;
+}
+
+.text-proverbs--8 {
+    top: 60%;
+    left: 55%;
+}
+
+.image-center {
+    position: absolute;
+    top: -60px;
+    left: -35px;
+    transform: scale(0.87);
 }
