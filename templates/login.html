@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icon.png') }}">
 </head>
-<body>
+<body id="page1">
     <div class="login-container fade-in">
         <div class="hover-container">
             <h1>Вход</h1>
@@ -23,7 +23,7 @@
             
             <button class="buttons" type="submit">Войти</button><br><br>
         </form>
-        <button class="btn" onclick="openPopup()">Не понимаешь? <br> Показать подсказку?</button>
+        <button class="btn" onclick="showPopup()">Не понимаешь? <br> Показать подсказку?</button>
     </div>
 
     <div class="overlay fade-in--popup" id="overlay"></div>
@@ -35,7 +35,7 @@
             (можешь навестись на кнопку входа по приколу)
         </p>
         <div class="popup-footer">
-            <button class="btn" onclick="closePopup()">Понятно</button>
+            <button class="btn" onclick="hidePopup()">Понятно</button>
         </div>
     </div>
     
@@ -71,6 +71,6 @@
 
     <audio id="hover-sound"></audio>
     
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"defer></script>
 </body>
 </html>

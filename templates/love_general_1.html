@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icon.png') }}">
     <title>Мы у метро</title>
 </head>
-<body>
+<body id="page2">
     <div class="header-text fade-in">
         08:35 или 10:25 — и снова кто-то из нас<br> ждёт другого у метро)
     </div>
@@ -32,11 +32,11 @@
         <div class="image-tooltip">ладно, подожду ещё...</div>
     </div>
 
-    <div class="overlay fade-in--popup" id="overlay"></div>
+    <div class="overlay fade-in--popup" id="overlay1"></div>
 
-    <div class="popup fade-in--popup" id="popup">
+    <div class="popup fade-in--popup" id="popup1">
         <div class="popup-header">
-            <button class="close-btn" id="close-btn">&times;</button>
+            <button class="close-btn" id="close-btn1">&times;</button>
         </div>
         <div class="popup-body">
             <p>я не знаю что сказать... <br>
@@ -44,57 +44,12 @@
             </p>
         </div>
         <div class="popup-footer">
-            <button class="btn" id="ok-btn">Ладно</button>
+            <button class="btn" id="ok-btn1">Ладно</button>
         </div>
     </div>
 
     <audio id="hover-sound"></audio>
 
-    <script>
-        // Получаем элементы DOM
-        const imageContainers = document.querySelectorAll('.image-container');
-        const overlay = document.getElementById('overlay');
-        const popup = document.getElementById('popup');
-        const closeBtn = document.getElementById('close-btn');
-        const okBtn = document.getElementById('ok-btn');
-        const hoverSound = document.getElementById('hover-sound');
-        const images = document.querySelectorAll('.image-container img');
-    
-        // Функция для показа popup и overlay
-        function showPopup() {
-            overlay.style.display = 'block';
-            popup.style.display = 'block';
-        }
-    
-        // Функция для скрытия popup и overlay
-        function hidePopup() {
-            overlay.style.display = 'none';
-            popup.style.display = 'none';
-        }
-    
-        // Добавляем обработчики событий на изображения
-        imageContainers.forEach(container => {
-            container.addEventListener('click', showPopup);
-        });
-    
-        // Добавляем обработчики событий на кнопки закрытия и OK
-        closeBtn.addEventListener('click', hidePopup);
-        okBtn.addEventListener('click', hidePopup);
-    
-        // Закрываем popup при клике на overlay
-        overlay.addEventListener('click', hidePopup);
-
-        images.forEach(image => {
-            image.addEventListener('mouseenter', () => {
-                const soundFile = image.getAttribute('data-sound');
-                if (soundFile) {
-                    hoverSound.pause();
-                    hoverSound.currentTime = 0;
-                    hoverSound.src = soundFile;
-                    hoverSound.play();
-                }
-            });
-        });
-    </script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
