@@ -38,64 +38,8 @@
     <div class="text-bottom fade-in">В инете очев...
     </div>
 
-    <a href="/proverbs" class="button">Продолжить &gt;&gt;&gt;</a>
-
-    <div class="overlay fade-in--popup" id="overlay"></div>
-
-    <div class="popup fade-in--popup" id="popup">
-        <div class="popup-header">
-            <button class="close-btn" id="close-btn">&times;</button>
-        </div>
-        <div class="popup-body">
-            <p>это единственный путь)<br>
-               мяу мяу мяу)<br>
-            </p>
-        </div>
-        <div class="popup-footer">
-            <button class="btn" id="ok-btn">хорошо...</button>
-        </div>
-    </div>
-
     <audio id="hover-sound"></audio>
 
-    <script>
-        const imageContainers = document.querySelectorAll('.image-container-tog');
-        const overlay = document.getElementById('overlay');
-        const popup = document.getElementById('popup');
-        const closeBtn = document.getElementById('close-btn');
-        const okBtn = document.getElementById('ok-btn');
-        const hoverSound = document.getElementById('hover-sound');
-        const images = document.querySelectorAll('.image-container-tog img');
-
-        function showPopup() {
-            overlay.style.display = 'block';
-            popup.style.display = 'block';
-        }
-
-        function hidePopup() {
-            overlay.style.display = 'none';
-            popup.style.display = 'none';
-        }
-
-        imageContainers.forEach(container => {
-            container.addEventListener('click', showPopup);
-        });
-
-        closeBtn.addEventListener('click', hidePopup);
-        okBtn.addEventListener('click', hidePopup);
-        overlay.addEventListener('click', hidePopup);
-
-        images.forEach(image => {
-            image.addEventListener('mouseenter', () => {
-                const soundFile = image.getAttribute('data-sound');
-                if (soundFile) {
-                    hoverSound.pause();
-                    hoverSound.currentTime = 0;
-                    hoverSound.src = soundFile;
-                    hoverSound.play();
-                }
-            });
-        });
-    </script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

@@ -14,66 +14,44 @@
     <div class="text-bottom fade-in">Квартира
     </div>
 
-    <a href="/love_general_7" class="button">Продолжить &gt;&gt;&gt;</a>
+    <div class="button button--unclickable">
+        Продолжить &gt;&gt;&gt;
+        <div class="tooltip-button">Временно не работает</div>
+    </div>
+    
     <a href="/love_general_5" class="button button--back"><<< Назад</a>
 
     <div class="image-container left fade-in">
-        <img src="{{ url_for('static', filename='images/love_general_6/bad.png') }}" alt="Изображение 1">
+        <img src="{{ url_for('static', filename='images/love_general_6/bad.png') }}" alt="Изображение 1"
+        data-sound="{{ url_for('static', filename='sounds/sound1.mp3') }}">
         <div class="image-tooltip">— я люблю тебя<br>— и я тебя</div>
     </div>
     <div class="image-container right fade-in">
-        <img src="{{ url_for('static', filename='images/love_general_6/cook.png') }}" alt="Изображение 2">
+        <img src="{{ url_for('static', filename='images/love_general_6/cook.png') }}" alt="Изображение 2"
+        data-sound="{{ url_for('static', filename='sounds/sound1.mp3') }}">
         <div class="image-tooltip">Трапеция)))</div>
     </div>
 
-    <div class="overlay fade---popup" id="overlay"></div>
+    <div class="overlay fade-in--popup" id="overlay1"></div>
 
-    <div class="popup fade-in--popup" id="popup">
+    <div class="popup popup--love6 fade-in--popup" id="popup1">
         <div class="popup-header">
-            <button class="close-btn" id="close-btn">&times;</button>
+            <button class="close-btn" id="close-btn1">&times;</button>
         </div>
         <div class="popup-body">
             <p>люблю тебя! <br>
                мяу мяу мяу)<br>
-                (кровать нас так и не отпустила)
+            (кровать не хочет отпускать нас)
             </p>
         </div>
         <div class="popup-footer">
-            <button class="btn" id="ok-btn">и я тебя люблю)</button>
+            <button href="/love_general_1" class="btn btn--love6" id="ok-btn2">а я тебя не люблю</button>
+            <button class="btn btn--love6-1" id="ok-btn3">и я тебя люблю)</button>
         </div>
     </div>
 
-    <script>
-        // Получаем элементы DOM
-        const imageContainers = document.querySelectorAll('.image-container');
-        const overlay = document.getElementById('overlay');
-        const popup = document.getElementById('popup');
-        const closeBtn = document.getElementById('close-btn');
-        const okBtn = document.getElementById('ok-btn');
-    
-        // Функция для показа popup и overlay
-        function showPopup() {
-            overlay.style.display = 'block';
-            popup.style.display = 'block';
-        }
-    
-        // Функция для скрытия popup и overlay
-        function hidePopup() {
-            overlay.style.display = 'none';
-            popup.style.display = 'none';
-        }
-    
-        // Добавляем обработчики событий на изображения
-        imageContainers.forEach(container => {
-            container.addEventListener('click', showPopup);
-        });
-    
-        // Добавляем обработчики событий на кнопки закрытия и OK
-        closeBtn.addEventListener('click', hidePopup);
-        okBtn.addEventListener('click', hidePopup);
-    
-        // Закрываем popup при клике на overlay
-        overlay.addEventListener('click', hidePopup);
-    </script>
+    <audio id="hover-sound"></audio>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
