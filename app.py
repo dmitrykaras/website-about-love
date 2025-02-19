@@ -72,5 +72,17 @@ def proverbs():
 def together():
     return render_template('together.html')
 
+@app.route('/space')
+def space():
+    return render_template('space.html')
+
+@app.route('/stickers')
+def stickers():
+    return render_template('stickers.html')
+
+@app.route('/video')
+def video():
+    return render_template('video.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

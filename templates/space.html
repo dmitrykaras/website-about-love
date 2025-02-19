@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icon.png') }}">
+    <title>Тот самый четверг)</title>
+</head>
+<body class="body body--space">
+    <div class="image-container center image-container-center  fade-in">
+        <img src="{{ url_for('static', filename='images/space/space.png') }}" alt="Изображение 1"
+        data-sound="{{ url_for('static', filename='sounds/sound1.mp3') }}">
+    </div>
+
+    <div class="header-text fade-in">
+        День начала нашей истории
+    </div>
+
+    <div class="text-bottom fade-in">
+        <a href="https://yandex.ru/maps/-/CHuY7EjD" target="_blank">Сад Олимпия</a>
+    </div>
+
+    <a href="/video" class="button">Продолжить &gt;&gt;&gt;</a>
+    <a href="/together" class="button button--back"><<< Назад</a>
+
+
+    <div class="overlay fade-in--popup" id="overlay1"></div>
+
+    <div class="popup fade-in--popup" id="popup1">
+        <div class="popup-header">
+            <button class="close-btn" id="close-btn1">&times;</button>
+        </div>
+        <div class="popup-body">
+            <p>очень хороший день)
+            </p>
+        </div>
+        <div class="popup-footer">
+            <button class="btn" id="ok-btn1">)))</button>
+        </div>
+    </div>
+
+    <audio id="hover-sound"></audio>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

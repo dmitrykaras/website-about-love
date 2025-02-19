@@ -15,6 +15,10 @@ body {
     background-image: url('/static/images/bg_punishment.jpg');
 }
 
+.body--space {
+    background-image: url('/static/images/bg_space.jpg');
+}
+
 /*текст, кнопки и поля для ввода*/
 .login-container {
     background-color: transparent;
@@ -255,6 +259,11 @@ button:hover {
     transform: scale(1.5);
 }
 
+.image-container-center {
+    width: 400px;
+    height: 400px;
+}
+
 .image-container img {
     width: 100%;
     height: 100%;
@@ -490,6 +499,8 @@ button:hover {
     color: rgba(255, 255, 255, 0.5);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     white-space: nowrap;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.2);;
 }
 
 /* Стили для ссылки */
@@ -581,4 +592,12 @@ button:hover {
 
   .image-container-tog img:hover {
     transform: scale(1.3);
+  }
+
+  video {
+    width: 100%; /* Ширина видео */
+    height: auto; /* Высота автоматически подстраивается */
+    max-width: 800px; /* Максимальная ширина */
+    display: block; /* Убирает лишние отступы */
+    margin: 0 auto; /* Центрирование */
   }
