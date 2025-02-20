@@ -84,5 +84,9 @@ def stickers():
 def video():
     return render_template('video.html')
 
+@app.route('/end')
+def end():
+    return render_template('end.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

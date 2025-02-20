@@ -87,3 +87,34 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+//убегающая кнопка
+document.addEventListener('DOMContentLoaded', function() {
+    const button = document.getElementById('movingButton');
+
+    button.addEventListener('mouseover', function() {
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+    const buttonWidth = button.offsetWidth;
+    const buttonHeight = button.offsetHeight;
+
+    // Ограничение перемещения, чтобы кнопка не выходила за пределы экрана
+    const maxLeft = windowWidth - buttonWidth;
+    const maxTop = windowHeight - buttonHeight;
+
+    const randomLeft = Math.floor(Math.random() * maxLeft);
+    const randomTop = Math.floor(Math.random() * maxTop);
+
+    button.style.left = `${randomLeft}px`;
+    button.style.top = `${randomTop}px`;
+    });
+
+    // Инициализация начальной позиции кнопки
+    window.onload = function() {
+        button.style.left = '1120px';
+        button.style.top = '840px';
+    };
+    button.addEventListener('click', function() {
+        window.location.href = '/punishment';
+    });
+});

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icon.png') }}">
+    <title>Подарок</title>
+</head>
+<body class="body">
+
+    <div class="header-text fade-in">
+        В общем-то вот такой вот <br> у меня мини милый подарок:
+    </div>
+
+    <div class="text-bottom text-bottom--undecoration fade-in">
+        <a>Ну где-то...</a>
+    </div>
+
+    <a href="/end" class="button">Продолжить &gt;&gt;&gt;</a>
+    <a href="/video" class="button button--back"><<< Назад</a>
+
+    <a href="https://t.me/addstickers/Love_v_d" class="text-center">Жми на меня!</a>
+
+
+    <div class="overlay fade-in--popup" id="overlay1"></div>
+
+    <div class="popup fade-in--popup" id="popup1">
+        <div class="popup-header">
+            <button class="close-btn" id="close-btn1">&times;</button>
+        </div>
+        <div class="popup-body">
+            <p>очень хороший день)
+            </p>
+        </div>
+        <div class="popup-footer">
+            <button class="btn" id="ok-btn1">)))</button>
+        </div>
+    </div>
+
+    <audio id="hover-sound"></audio>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

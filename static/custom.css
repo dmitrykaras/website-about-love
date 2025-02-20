@@ -401,10 +401,11 @@ button:hover {
     animation: fadeIn 0.5s ease-in-out;
 }
 
-/*Текст в центре для /transitional*/
+/*Текст в центре для /transitional и /stickers*/
 .text-center {
     text-align: center;
     font-family: Arial, sans-serif;
+    font-weight: bold;
     font-size: 34px;
     color: #ffffff;
 }
@@ -501,6 +502,15 @@ button:hover {
     white-space: nowrap;
     text-decoration: underline;
     text-decoration-color: rgba(255, 255, 255, 0.2);;
+}
+
+.text-bottom--undecoration {
+    text-decoration: none;
+}
+
+.text-bottom--left {
+    right: none;
+    left: 20px;
 }
 
 /* Стили для ссылки */
