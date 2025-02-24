@@ -7,30 +7,16 @@ from datetime import datetime
 import numpy as np
 import io
 import base64
-app = Flask(__name__)
-app.secret_key = 'your_secret_key'
 
-users = {
-    'Вероника': 'я люблю тебя'
-}
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        
-        if username in users and users[username] == password:
-            return redirect(url_for('transitional'))
-        else:
-            flash('Неверный логин или пароль!', 'error')
-            return redirect(url_for('login'))
-    return render_template('login.html',background_image='/static/images/image.jpg')
+app = Flask(__name__)
 
 @app.route('/transitional')
 def transitional():
     return render_template('transitional.html')
 
+@app.route('/hu')
+def hu():
+    return render_template('hu.html')
 
 @app.route('/punishment')
 def punishment():

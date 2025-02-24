@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icon.png') }}">
+    <link rel="stylesheet" href="static/custom.css">
+    <link rel="icon" type="image/png" href="static/images/icon.png">
     <title>Тот самый четверг)</title>
 </head>
 <body class="body body--space">
     <div class="image-container center image-container-center  fade-in">
-        <img src="{{ url_for('static', filename='images/space/space.png') }}" alt="Изображение 1"
-        data-sound="{{ url_for('static', filename='sounds/sound1.mp3') }}">
+        <img src="static/images/space/space.png" alt="Изображение 1"
+        data-sound="static/sounds/sound1.mp3">
     </div>
 
     <div class="header-text fade-in">
@@ -42,6 +42,6 @@
 
     <audio id="hover-sound"></audio>
     
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="static/js/script.js"defer></script>
 </body>
 </html>

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title class="outlined-text">...</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icon.png') }}">
+    <link rel="stylesheet" href="static/custom.css">
+    <link rel="icon" type="image/png" href="static/images/icon.png">
 </head>
 <body class="body body--punish">
     <div class="text-center text-center--punish fade-in">
@@ -14,17 +14,17 @@
     </div>
 
     <div class="image-container right fade-in">
-        <img src="{{ url_for('static', filename='images/punishnent/knife.png') }}" alt="Изображение 2" 
-        data-sound="{{ url_for('static', filename='sounds/sound2.mp3') }}">
+        <img src="static/images/punishnent/knife.png" alt="Изображение 2" 
+        data-sound="static/sounds/sound2.mp3">
     </div>
 
     <div class="image-bg fade-in">
-        <img src="{{ url_for('static', filename='images/punishnent/nadz.png') }}">
+        <img src="static/images/punishnent/nadz.png">
     </div>
 
     <a href="/transitional" class="button button--punish button--origin">Вернутся обратно(</a>
 
     <audio id="hover-sound"></audio>
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="static/js/script.js"defer></script>
 </body>

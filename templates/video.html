@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icon.png') }}">
+    <link rel="stylesheet" href="static/custom.css">
+    <link rel="icon" type="image/png" href="static/images/icon.png">
     <title>Видево)</title>
 </head>
 <body>
     <video class="video fade-in" muted loop autoplay>
-        <source src="{{ url_for('static', filename='images/video/love.mp4') }}" type="video/mp4">
+        <source src="static/images/video/love.mp4" type="video/mp4">
       </video>
 
     <div class="header-text fade-in">
-        Милый видос про любовь ❤️
+        Милое видево ❤️
     </div>
 
     <a href="/stickers" class="button">Продолжить &gt;&gt;&gt;</a>
     <a href="/space" class="button button--back"><<< Назад</a>
     
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="static/js/script.js"defer></script>
 </body>
 </html>

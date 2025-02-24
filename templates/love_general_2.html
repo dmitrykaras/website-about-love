@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icon.png') }}">
+    <link rel="stylesheet" href="static/custom.css">
+    <link rel="icon" type="image/png" href="static/images/icon.png">
     <title>Встретились)</title>
 </head>
 <body>
@@ -19,13 +19,13 @@
     <a href="/love_general_1" class="button button--back"><<< Назад</a>
 
     <div class="image-container left fade-in">  
-        <img src="{{ url_for('static', filename='images/love_general_2/hugging.png') }}" alt="Изображение 1"
-        data-sound="{{ url_for('static', filename='sounds/sound1.mp3') }}">
+        <img src="static/images/love_general_2/hugging.png" alt="Изображение 1"
+        data-sound="static/sounds/sound1.mp3">
         <div class="image-tooltip">*мур мур мур*</div>
     </div>
     <div class="image-container right fade-in">
-        <img src="{{ url_for('static', filename='images/love_general_2/kiss_m.png') }}" alt="Изображение 2"
-        data-sound="{{ url_for('static', filename='sounds/sound1.mp3') }}">
+        <img src="static/images/love_general_2/kiss_m.png" alt="Изображение 2"
+        data-sound="static/sounds/sound1.mp3">
         <div class="image-tooltip">кусь)</div>
     </div>
 
@@ -47,6 +47,6 @@
 
     <audio id="hover-sound"></audio>
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="static/js/script.js"defer></script>
 </body>
 </html>

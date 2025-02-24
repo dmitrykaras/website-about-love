@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icon.png') }}">
+    <link rel="stylesheet" href="static/custom.css">
+    <link rel="icon" type="image/png" href="static/images/icon.png">
     <title>Путь к ❤️</title>
 </head>
 <body>
@@ -14,18 +14,18 @@
     <div class="text-bottom text-bottom--undecoration fade-in">Нигде
     </div>
 
-    <a href="/together" class="button">Продолжить &gt;&gt;&gt;</a>
+    <a href="/proverbs" class="button">Продолжить &gt;&gt;&gt;</a>
     <a href="/love_general_6" class="button button--back"><<< Назад</a>
 
     <div class="image-container right fade-in">
-        <img src="{{ url_for('static', filename='images/love_general_7/way2.png') }}" alt="Изображение 1"
-        data-sound="{{ url_for('static', filename='sounds/sound1.mp3') }}">
+        <img src="static/images/love_general_7/way2.png" alt="Изображение 1"
+        data-sound="static/sounds/sound1.mp3">
         <div class="image-tooltip">вот такой вот путь)</div>
     </div>
 
     <div class="image-container left fade-in">
-        <img src="{{ url_for('static', filename='images/love_general_7/way1.png') }}" alt="Изображение 1"
-        data-sound="{{ url_for('static', filename='sounds/sound1.mp3') }}">
+        <img src="static/images/love_general_7/way1.png" alt="Изображение 1"
+        data-sound="static/sounds/sound1.mp3">
         <div class="image-tooltip">мяу мяу мяу)</div>
     </div>
 
@@ -47,6 +47,6 @@
 
     <audio id="hover-sound"></audio>
     
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="static/js/script.js"defer></script>
 </body>
 </html>
