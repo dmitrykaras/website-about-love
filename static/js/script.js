@@ -118,3 +118,24 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = '/punishment';
     });
 });
+
+//счётчик дней от дня когда мы встретились
+document.addEventListener('DOMContentLoaded', function() {
+const meetingDate = new Date('2024-11-14');
+
+function updateCounter() {
+    const currentDate = new Date();
+    const timeDifference = currentDate - meetingDate;
+    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+    document.getElementById('days-counter').textContent = 
+        `${days} дня ${hours} часов ${minutes} минут ${seconds} секунд`;
+}
+
+updateCounter();
+
+setInterval(updateCounter, 1000);
+});

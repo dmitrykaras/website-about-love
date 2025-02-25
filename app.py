@@ -14,9 +14,13 @@ app = Flask(__name__)
 def transitional():
     return render_template('transitional.html')
 
-@app.route('/hu')
-def hu():
-    return render_template('hu.html')
+@app.route('/index')
+def index():
+    return render_template('index.html')
+
+@app.route('/counter')
+def counter():
+    return render_template('counter.html')
 
 @app.route('/punishment')
 def punishment():

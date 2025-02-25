@@ -401,6 +401,10 @@ button:hover {
     animation: fadeIn 0.5s ease-in-out;
 }
 
+.fade-in--1 {
+    animation: fadeIn 10s ease-in-out;
+}
+
 /*Текст в центре для /transitional и /stickers*/
 .text-center {
     text-align: center;
@@ -415,6 +419,7 @@ button:hover {
     top: 220px;
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5)
 }
+
 
 /*кнопка продолжить*/
 .button {
@@ -594,20 +599,20 @@ button:hover {
     gap: 10px; 
   }
   
-  .image-container-tog img {
+.image-container-tog img {
     max-width: 100%;
     height: 220px;
     transition: transform 0.2s ease;
   }
 
-  .image-container-tog img:hover {
+.image-container-tog img:hover {
     transform: scale(1.3);
   }
 
-  video {
-    width: 100%; /* Ширина видео */
-    height: auto; /* Высота автоматически подстраивается */
-    max-width: 800px; /* Максимальная ширина */
-    display: block; /* Убирает лишние отступы */
-    margin: 0 auto; /* Центрирование */
+.video {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    display: block;
+    margin: 0 auto;
   }
