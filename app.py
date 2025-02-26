@@ -18,10 +18,6 @@ def transitional():
 def index():
     return render_template('index.html')
 
-@app.route('/counter')
-def counter():
-    return render_template('counter.html')
-
 @app.route('/punishment')
 def punishment():
     return render_template('punishment.html')
@@ -66,13 +62,21 @@ def together():
 def space():
     return render_template('space.html')
 
-@app.route('/stickers')
-def stickers():
-    return render_template('stickers.html')
-
 @app.route('/video')
 def video():
     return render_template('video.html')
+
+@app.route('/counter')
+def counter():
+    return render_template('counter.html')
+
+@app.route('/subtitles')
+def subtitles():
+    return render_template('subtitles.html')
+
+@app.route('/stickers')
+def stickers():
+    return render_template('stickers.html')
 
 @app.route('/end')
 def end():

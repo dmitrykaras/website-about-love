@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/custom.css">
+    <link rel="icon" type="image/png" href="static/images/icon.png">
+    <title>Мы</title>
+</head>
+<body>
+    <div class="header-text fade-in">
+        <a>...</a>
+    </div>
+
+    <div class="text-bottom text-bottom--left text-bottom--undecoration fade-in--1">
+        <a>(жми в любое место чтобы <br> субтитры шли дальше)</a>
+    </div>
+
+    <div class="image-container left fade-in">
+        <img src="static/images/counter/d_watch.png" alt="Изображение 1" 
+        data-sound="static/sounds/sound1.mp3">
+        <div class="image-tooltip">Ещё чуть-чуть и можно</div>
+    </div>
+    <div class="image-container right fade-in">
+        <img src="static/images/counter/m_watch.png" alt="Изображение 2"
+        data-sound="static/sounds/sound1.mp3">
+        <div class="image-tooltip">ЧАСЫ СКАЗАЛИ ТЕБЯ ЦЕЛОВАТЬ</div>
+    </div>
+
+    <a href="/stickers" class="button button--subtitles">Продолжить &gt;&gt;&gt;</a>
+    <a href="/counter" class="button button--back button--subtitles"><<< Назад</a>
+
+    <div class="subtitles-container">
+        <div id="subtitles" class="subtitles">Первый текст субтитров</div>
+    </div>
+
+    <audio id="hover-sound"></audio>
+
+    <script src="static/js/script.js"defer></script>
+</body>
+</html>

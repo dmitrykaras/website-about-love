@@ -139,3 +139,52 @@ updateCounter();
 
 setInterval(updateCounter, 1000);
 });
+
+//субтитры
+document.addEventListener('DOMContentLoaded', function() {
+const subtitles = document.getElementById('subtitles');
+const texts = [
+    "Я поздравлю тебя с днём рождения!!!",
+    "Ты самая лучшая и самая самая девочка на свете",
+    " Желаю тебе здоровья, счастья и достижение всех целей",
+    "Любви не желаю тк я сам займусь этим вопросом)",
+    "Люблю тебя! Ты лучшая ❤️"
+];
+
+let currentIndex = 0;
+let isTyping = false;
+
+function typeText(text, element, delay = 100) {
+    isTyping = true;
+    let index = 0;
+    element.textContent = "";
+
+    const interval = setInterval(() => {
+        if (index < text.length) {
+            element.textContent += text[index];
+            index++;
+        } else {
+            clearInterval(interval);
+            isTyping = false;
+        }
+    }, delay);
+}
+
+function changeSubtitles() {
+    if (isTyping) return;
+
+    if (currentIndex < texts.length - 1) { 
+        currentIndex++;
+        typeText(texts[currentIndex], subtitles);
+    } else {
+        console.log("Субтитры закончились.");
+    }
+}
+
+document.addEventListener('click', (event) => {
+    changeSubtitles();
+});
+
+typeText(texts[currentIndex], subtitles);
+});
+
