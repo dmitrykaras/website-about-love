@@ -145,8 +145,8 @@ document.addEventListener('DOMContentLoaded', function() {
 const subtitles = document.getElementById('subtitles');
 const texts = [
     "Я поздравлю тебя с днём рождения!!!",
-    "Ты самая лучшая и самая самая девочка на свете",
-    " Желаю тебе здоровья, счастья и достижение всех целей",
+    "Ты самая лучшая и самая самая девочка на свете ❤️",
+    " Желаю тебе здоровья, счастья и достижение всех целей!",
     "Любви не желаю тк я сам займусь этим вопросом)",
     "Люблю тебя! Ты лучшая ❤️"
 ];
@@ -188,3 +188,71 @@ document.addEventListener('click', (event) => {
 typeText(texts[currentIndex], subtitles);
 });
 
+//переключение изображений
+document.addEventListener('DOMContentLoaded', function() {
+// Массив с путями к изображениям
+const images = [
+    "static/images/subtitles/image1.png",
+    "static/images/subtitles/image2.png",
+    "static/images/subtitles/image3.png",
+    "static/images/subtitles/image4.png",
+    "static/images/subtitles/image5.png"
+];
+
+// Массив с подсказками для каждого изображения
+const tooltips = [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+];
+
+let currentIndex = 0; // Текущий индекс изображения
+
+// Функция для смены изображения
+function changeImage() {
+    const imageElement = document.getElementById('iii');
+    const tooltip = document.querySelector('.image-container .image-tooltip');
+
+    // Меняем изображение и подсказку
+    imageElement.src = images[currentIndex];
+    tooltip.textContent = tooltips[currentIndex];
+
+    // Переходим к следующему изображению
+    currentIndex = (currentIndex + 1) % images.length;
+}
+
+// Добавляем обработчик события для всей страницы
+document.addEventListener('click', changeImage);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+// Получаем модальное окно
+var modal = document.getElementById("myModal");
+
+// Получаем изображение и вставляем его внутрь модального окна
+var img = document.querySelector('.open-modal');
+var modalImg = document.getElementById("img01");
+
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+
+// Получаем элемент <span>, который закрывает модальное окно
+var span = document.getElementsByClassName("close")[0];
+
+// Когда пользователь нажимает на <span> (x), закрываем модальное окно
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+
+// Закрываем модальное окно, если пользователь кликает вне изображения
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+document.addEventListener('click', changeImage);
+});

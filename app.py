@@ -10,6 +10,10 @@ import base64
 
 app = Flask(__name__)
 
+@app.route('/setting')
+def setting():
+    return render_template('setting.html')
+
 @app.route('/transitional')
 def transitional():
     return render_template('transitional.html')

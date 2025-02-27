@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/custom.css">
+    <link rel="icon" type="image/png" href="static/images/icon.png">
+    <title>Настройка масштаба (обязательно)</title>
+</head>
+<body class="body">
+
+    <div class="text-center text-center--punish fade-in">
+        У вас могут быть проблемы с отображением изображений и других элементов.
+        Если ваш экран сейчас выглядит так, как на изображении, и вы можете нажать на кнопку «Продолжить >>>», то, вероятно, всё работает как надо.
+        Если всё отображается не так, как нужно, нажмите одновременно Ctrl и - дважды (масштаб уменьшится до 80%).
+    </div>
+
+
+    <a href="/index" class="button button--origin">Продолжить &gt;&gt;&gt;</a>
+
+    <div class="text-bottom text-bottom--left text-bottom--undecoration fade-in">
+        <a>Настройка масштаба займёт не больше минуты</a>
+    </div>
+    
+    <div class="image-container left fade-in">
+        <img src="static/images/settings/image.png" alt="Изображение 1" 
+        data-sound="static/sounds/sound1.mp3" class="open-modal">
+        <div class="image-tooltip">Нажми на это изображение</div>
+    </div>
+
+    <div id="myModal" class="modal fade-in--popup">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <div class="image-container right fade-in">
+        <img src="static/images/love_general_1/m_metro.png" alt="Изображение 2"
+        data-sound="static/sounds/sound1.mp3">
+        <div class="image-tooltip">ладно, подожду ещё...</div>
+    </div>
+
+    <audio id="hover-sound"></audio>
+    
+    <script src="static/js/script.js"defer></script>
+</body>
+</html>
