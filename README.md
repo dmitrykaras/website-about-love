@@ -1,4 +1,4 @@
-# 💖 Website for Love
+# 💖 Website about Love
 
 **Website for Love** is a website I created as a gift for my girlfriend.  
 
