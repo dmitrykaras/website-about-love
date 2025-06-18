@@ -1,61 +1,60 @@
 # 💖 Website for Love
 
-**Website for Love** — это сайт, который я создал в подарок своей девушке.  
+**Website for Love** is a website I created as a gift for my girlfriend.  
 
 ---
 
-## ✨ Возможности
+## ✨ Features
 
-- Эстетичный дизайн
-- Чистый HTML + CSS
-- Анимации, оформленные с теплотой
-- Пасхалки: юмористические подсказки при наведении, выскакивающие коты и другое
+- Aesthetic design  
+- Clean HTML + CSS  
+- Warm, heartfelt animations  
+- Easter eggs: humorous hover tips, surprise cats, and more
 
-### 🎞️ Примеры пасхалок:
+### 🎞️ Easter Egg Examples:
 
-![Пасхалка 1](static/images/extra/1.gif)
-![Пасхалка 2](static/images/extra/2.gif)
-![Пасхалка 3](static/images/extra/3.gif)
+![Easter Egg 1](static/images/extra/1.gif)  
+![Easter Egg 2](static/images/extra/2.gif)  
+![Easter Egg 3](static/images/extra/3.gif)
 
 ---
 
-## 🛠️ Технологии
+## 🛠️ Technologies
 
-- 💻 HTML5
+- 💻 HTML5  
 - 🎨 CSS3
 
 ---
 
-## 🚀 Как запустить
+## 🚀 How to View
 
-Чтобы посмотреть сайт вживую, перейдите по ссылке:  
+To see the live website, follow this link:  
 🔗 **[https://dmitrykaras.github.io/](https://dmitrykaras.github.io/)**
 
 ---
 
-## 🧪 Запуск локально
+## 🧪 Run Locally
 
-1. Склонируйте репозиторий:
+1. Clone the repository:
    ```bash
    git clone https://github.com/dmitrykaras/website-for-love.git
 
+---
+
+## 📌 Image Captions
+
+![Sreenshot 1:](static/images/extra/4.png)
+![Sreenshot 2:](static/images/extra/5.png)
 
 ---
 
-## 📌 Подписи у изображдений
+## 🌹  About the Project
 
-![Скриншот 1:](static/images/extra/4.png)
-![Скриншот 2:](static/images/extra/5.png)
-
----
-
-## 🌹 О проекте
-
-Этот сайт — это не просто код, а история.  
-История о том, как иногда важнее не слова, а моменты, которые мы создаём вместе.  
-Пусть он напомнит о встречах, ожидании у метро и маленьких радостях.
+This website is more than just code — it’s a story.
+A story about how sometimes, moments we create together matter more than words.
+Let it be a reminder of the meetings, the waiting at the metro, and the little joys.
 
 ---
 
-> Этот сайт — личный подарок, созданный с теплом, заботой и любовью.  
-> Он отражает моменты, которые важны для нас, и оформлен так, чтобы их запомнить навсегда.
+> This website is a personal gift, created with warmth, care, and love.
+> It reflects the moments that matter to us, designed to be remembered forever.
